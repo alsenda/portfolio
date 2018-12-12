@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import { Switch, Route, Link } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
+import * as actions from '../../store/actions';
+
+import Header from '../../components/Header';
 import Home from '../../pages/Home';
 import NotFound from '../../pages/NotFound';
 
-import * as actions from '../../store/actions';
 
 class App extends Component {
   renderButton = () => {
@@ -22,13 +24,9 @@ class App extends Component {
 
   renderHeader = () => {
     return (
-      <ul>
-        <li>
-          <Link to='/'>Home</Link>
-          <Link to='/asdf78a9sd'>Random</Link>
-        </li>
-        <li>{ this.renderButton() }</li>
-      </ul>
+      <div className='app-wrapper'>
+        <Header />
+      </div>
     )
   }
 
